@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="menu">
-        <h1>Menu</h1>
+        <h1 onmouseover="timeout(1)" onmouseout="cleartime()">Menu</h1>
         <input type="text" id="txtSearch" onkeyup="find()" placeholder="Country name">
         <p>
             <input type="checkbox" id="oc" name="oceania" onchange="filter()" checked/>
@@ -46,7 +46,8 @@
         
     </div>
     <div id="main">
-        <ul id="list"></ul>
+        <ul clas="Big"></ul>
+
     </div>
     <script src="app.js"></script>
 </body>

@@ -19,6 +19,9 @@ function createList(){
                     if(json[i].name.common.toLowerCase().includes(searchValue)){
                         const div = document.createElement("div")
                         div.classList.add("div")
+                        div.setAttribute("onmouseover",`timeout(${i})`)
+                        div.setAttribute("onmouseout","cleartime()")
+                        
                         const flag = document.createElement("img")
                         flag.classList.add("flag")
                         flag.src = json[i].flags.png
@@ -51,9 +54,13 @@ function createList(){
                 else{
                     const div = document.createElement("div")
                         div.classList.add("div")
+                        div.setAttribute("onmouseover",`timeout(${i})`)
+                        div.setAttribute("onmouseout","cleartime()")
+
                         const flag = document.createElement("img")
                         flag.classList.add("flag")
                         flag.src = json[i].flags.png
+                        flag.setAttribute('onclick',`bigDiv(${i})`)
 
                         const name = document.createElement("h2")
                         name.classList.add("name")
@@ -108,4 +115,65 @@ function filter(){
 function find(){
     searchValue = document.getElementById("txtSearch").value.toLowerCase()
     createList()
+}
+var times 
+function timeout(i){
+    console.log("d")
+    times = window.setTimeout(()=>{
+        bigDiv(i)
+    },3000)
+}
+function cleartime(){
+    window.clearTimeout(times)
+}
+
+function bigDiv(i){
+    removeElementsByClass("Big")
+    var kraj = json[i]
+    const Bdiv = document.createElement("div")
+    Bdiv.classList.add("Big")
+    
+
+    const Bname =document.createElement("h1")
+    Bname.innerHTML = kraj.name.common
+    Bname.classList.add("name")
+
+    const Brest = document.createElement("div")
+    Brest.classList.add("rest")
+
+    const Bcapital =document.createElement("h2")
+    Bcapital.innerHTML = kraj.capital
+    Bcapital.classList.add("capital")
+
+    const Barea =document.createElement("h2")
+    Barea.innerHTML = kraj.area
+    Barea.classList.add("area")
+
+    const Bpopulation =document.createElement("h2")
+    Bpopulation.innerHTML = kraj.population
+    Bpopulation.classList.add("population")
+
+    const Bflag =document.createElement("img")
+    Bflag.src = kraj.flags.png
+    Bflag.classList.add("Bflag")
+
+    const Bbutton = document.createElement("button")
+    Bbutton.innerHTML = "X"
+    Bbutton.setAttribute("onclick","removeElementsByClass('Big')")
+
+    Bdiv.appendChild(Bname)
+    Brest.appendChild(Bcapital)
+    Brest.appendChild(Barea)
+    Brest.appendChild(Bpopulation)
+    Brest.appendChild(Bflag)
+    Brest.appendChild(Bbutton)
+    Bdiv.appendChild(Brest)
+    document.getElementById("main").appendChild(Bdiv)
+}
+function removeElementsByClass(className){
+    console.log("x"+className)
+    const elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
 }

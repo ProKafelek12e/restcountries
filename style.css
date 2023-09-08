@@ -90,6 +90,26 @@ body{
 
     border: #040F16 2px solid;
 }
+.Big{
+    display:grid;
+    grid-template-columns: 200px 400px;
+    grid-template-rows: 70px 130px;
+    grid-template-areas: "flag name" "flag rest";
+    
+    position: absolute;
+    
+    
+    z-index: 3;
+    background-color: aliceblue;
+}
+.rest{
+    grid-area: rest;
+}
+.Bflag{
+    grid-area: flag;
+    height: 200px;
+    width: 200px;
+}
 /*elements*/
 h1{
     font-size: 64px;
