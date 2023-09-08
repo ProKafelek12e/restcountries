@@ -1,0 +1,106 @@
+body{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: "menu main";
+    
+    font-family: Arial, Helvetica, sans-serif;
+    
+    margin: 0px;
+    height: 100vh;
+    
+    color:#323031;
+    
+}
+#menu{
+    grid-area: menu;
+    
+    text-align: center;
+    
+    background-color: #FFC857;
+}
+#main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+    overflow-y: auto;
+    
+    text-indent: 10px;
+    line-height: 30px;
+    
+    background-color: #323031;
+}
+/* classes*/
+.div{
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-areas: "flag name name" "flag population capital";
+
+    width: 300px;
+    margin-left: 20px;
+
+    background-color: #FFC857;
+}
+.flag{
+    grid-area: flag;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0px;
+    width: 96px;
+    height: 96px;
+
+    border: #040F16 2px solid;
+}
+.name{
+    grid-area: name;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: 0px;
+
+    border: #040F16 2px solid;
+}
+.population{
+    grid-area: population;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0px;
+
+    border: #040F16 2px solid;
+}
+.capital{
+    grid-area: capital;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0px;
+
+    border: #040F16 2px solid;
+}
+/*elements*/
+h1{
+    font-size: 64px;
+}
+h2{
+    font-size: 20px;
+}
+h3{
+    font-size: 12px;
+}
+li{
+    font-size: 24px;
+}
+
+.red{
+    color: red;
+}
