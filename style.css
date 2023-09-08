@@ -14,14 +14,16 @@ body{
 #menu{
     grid-area: menu;
     
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
     
     background-color: #FFC857;
 }
 #main{
     grid-area: main;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     
     gap: 20px;
     overflow-y: auto;

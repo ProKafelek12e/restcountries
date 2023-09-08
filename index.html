@@ -10,7 +10,34 @@
 <body>
     <div id="menu">
         <h1>Menu</h1>
-        <input type="text" id='txtSearch'>
+        <p>
+            <input type="checkbox" id="oc" name="oceania" onchange="filter()"/>
+            <label for="oceania">Oceania</label>
+        </p>
+        
+        <p>
+            <input type="checkbox" id="af" name="africa" onchange="filter()"/>
+            <label for="africa">Africa</label>
+        </p>
+        <p>
+            <input type="checkbox" id="am" name="americas" onchange="filter()"/>
+            <label for="americas">Americas</label>
+        </p>
+        
+        <p>
+            <input type="checkbox" id="an" name="antarctica" onchange="filter()"/>
+            <label for="antarctica">Antarctica</label>
+        </p>
+        <p>
+            <input type="checkbox" id="eu" name="europe" onchange="filter()"/>
+            <label for="europe">Europe</label>
+        </p>
+        
+        <p>
+            <input type="checkbox" id="as" name="asia" onchange="filter()"/>
+            <label for="asia">Asia</label>
+        </p>
+        
     </div>
     <div id="main">
         <ul id="list"></ul>
