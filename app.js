@@ -12,9 +12,10 @@ getData()
 function createList(){
     document.getElementById("main").innerHTML = ""
     for(let i=0;i<json.length;i++){
+        //regions filter
         for(let k=0;k<=filtr.length;k++){
             if(json[i].region==filtr[k]){
-
+                //search
                 const div = document.createElement("div")
                 div.classList.add("div")
                 const flag = document.createElement("img")
@@ -67,3 +68,15 @@ function filter(){
     }
     createList()
 }
+
+function find(){
+    const input = document.getElementById("txtSearch").value.toLowerCase()
+    console.log(input)
+}
+
+
+document.querySelector('#txtSearch').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      find()
+    }
+});
